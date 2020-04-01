@@ -21,7 +21,7 @@ namespace Harjoitus3DataHandler
         {
             foreach (var person in persons)
             {
-                Console.WriteLine($"{person.name} {person.age} {person.employed}");
+                Console.WriteLine($"{person.name} {person.age} {person.employed} {person.hobbies[0]}");
             }
         }
 
@@ -47,7 +47,7 @@ namespace Harjoitus3DataHandler
             {
                 Console.WriteLine("Add a hobby:");
                 person.hobbies.Add(Console.ReadLine());
-                Console.WriteLine("Hobby added. Add anotherhobby, or exit with number 0");
+                Console.WriteLine("Hobby added.\nAdd anotherhobby by pressing a key, or exit with number 0");
                 if (Console.ReadKey().Key == ConsoleKey.D0)
                 {
                     wantAdd = false;
