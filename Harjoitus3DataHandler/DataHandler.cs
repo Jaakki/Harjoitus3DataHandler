@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 
 namespace Harjoitus3DataHandler
 {
@@ -39,6 +40,24 @@ namespace Harjoitus3DataHandler
                 person.employed = Convert.ToBoolean(Console.ReadLine());
                 return person.employed;
             }
+
+
+            bool wantAdd = true;
+            do
+            {
+                Console.WriteLine("Add a hobby:");
+                person.hobbies.Add(Console.ReadLine());
+                Console.WriteLine("Hobby added. Add anotherhobby, or exit with number 0");
+                if (Console.ReadKey().Key == ConsoleKey.D0)
+                {
+                    wantAdd = false;
+                }
+                else
+                {
+                    wantAdd = true;
+                }
+            }
+            while (wantAdd == true);
 
             return person;
         }
