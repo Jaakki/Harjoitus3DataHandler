@@ -20,18 +20,30 @@ namespace Harjoitus3DataHandler
         {
             foreach (var person in persons)
             {
-                Console.WriteLine($"{person.name} {person.age}");
+                Console.WriteLine($"{person.name} {person.age} {person.employed}");
             }
         }
 
-        public Person CreatePerson()
+        public Person CreatePerson()                                //kysy employee ja harrastuksia
         {
             Person person = new Person();
             Console.WriteLine("Name: ");
             person.name = Console.ReadLine();
+
             Console.WriteLine("Age: ");
             person.age = Convert.ToInt32(Console.ReadLine());
+            person.employed = employment();
+            bool employment()
+            {
+                Console.WriteLine($"Employed?\ntrue or false\n");
+                person.employed = Convert.ToBoolean(Console.ReadLine());
+                return person.employed;
+            }
+
             return person;
         }
+
+        
+
     }
 }
